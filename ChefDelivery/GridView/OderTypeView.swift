@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OrderTypeView: View {
+struct OrderTypeItemView: View {
     
     let orderType: OrderType
     
@@ -26,7 +26,7 @@ struct OrderTypeView: View {
 
 struct OrderTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderTypeView(orderType: OrderType(
+        OrderTypeItemView(orderType: OrderType(
             id: 1,
             name: "Restaurantes",
             image: "hamburguer"))
