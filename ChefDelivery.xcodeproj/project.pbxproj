@@ -11,6 +11,7 @@
 		74761AEB2BC43ECF007958A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761AEA2BC43ECF007958A0 /* ContentView.swift */; };
 		74761AED2BC43ED2007958A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74761AEC2BC43ED2007958A0 /* Assets.xcassets */; };
 		74761AF12BC43ED2007958A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74761AF02BC43ED2007958A0 /* Preview Assets.xcassets */; };
+		74761AFA2BC56B66007958A0 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761AF92BC56B66007958A0 /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		74761AEC2BC43ED2007958A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74761AEE2BC43ED2007958A0 /* ChefDelivery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChefDelivery.entitlements; sourceTree = "<group>"; };
 		74761AF02BC43ED2007958A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74761AF92BC56B66007958A0 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,8 @@
 		74761AE72BC43ECF007958A0 /* ChefDelivery */ = {
 			isa = PBXGroup;
 			children = (
-				74761AE82BC43ECF007958A0 /* ChefDeliveryApp.swift */,
-				74761AEA2BC43ECF007958A0 /* ContentView.swift */,
+				74761AF72BC56B1F007958A0 /* App */,
+				74761AF82BC56B2E007958A0 /* NavigationBar */,
 				74761AEC2BC43ED2007958A0 /* Assets.xcassets */,
 				74761AEE2BC43ED2007958A0 /* ChefDelivery.entitlements */,
 				74761AEF2BC43ED2007958A0 /* Preview Content */,
@@ -67,6 +69,23 @@
 				74761AF02BC43ED2007958A0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		74761AF72BC56B1F007958A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				74761AE82BC43ECF007958A0 /* ChefDeliveryApp.swift */,
+				74761AEA2BC43ECF007958A0 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		74761AF82BC56B2E007958A0 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				74761AF92BC56B66007958A0 /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 			files = (
 				74761AEB2BC43ECF007958A0 /* ContentView.swift in Sources */,
 				74761AE92BC43ECF007958A0 /* ChefDeliveryApp.swift in Sources */,
+				74761AFA2BC56B66007958A0 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

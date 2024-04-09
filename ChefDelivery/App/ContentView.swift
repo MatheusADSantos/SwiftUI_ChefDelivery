@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, world!")
-            Text("Hello, world!")
+            Text("Teste")
+            Text("Teste")
         }
+        
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -23,9 +23,3 @@ struct ContentView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-
-
-//#Preview {
-//    ContentView()
-//        .previewLayout(.sizeThatFits)
-//}
