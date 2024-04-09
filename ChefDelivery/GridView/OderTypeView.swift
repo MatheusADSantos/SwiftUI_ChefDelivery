@@ -26,9 +26,10 @@ struct OrderTypeView: View {
 
 struct OrderTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderTypeView(orderType: OrderType(id: 1,
-                                           name: "Restaurantes",
-                                           image: "hamburguer"))
+        OrderTypeView(orderType: OrderType(
+            id: 1,
+            name: "Restaurantes",
+            image: "hamburguer"))
         .previewLayout(.sizeThatFits)
     }
 }
