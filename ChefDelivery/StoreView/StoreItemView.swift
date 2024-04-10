@@ -9,32 +9,25 @@ import SwiftUI
 
 struct StoreItemView: View {
     
-    let orders: OrderType
+    let store: StoreType
     
     var body: some View {
         HStack(alignment: .center, spacing: nil) {
-            Image(orders.image)
+            Image(store.logoImage)
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(25)
                 .frame(width: 50, height: 50)
-            Text(orders.name)
+            Text(store.name)
                 .font(.subheadline)
             Spacer()
-        }.onTapGesture {
-            print("Clicou em \(orders.name)")
-        }
+        }.foregroundColor(.black)
     }
 }
 
 struct StoreItemView_Previews: PreviewProvider {
     static var previews : some View {
-        StoreItemView(orders:
-                        OrderType(
-                            id: 1,
-                            name: "Monster Burguer",
-                            image: "monstro-burger-logo")
-        )
+        StoreItemView(store: storesMock[0])
         .previewLayout(.sizeThatFits)
     }
 }
