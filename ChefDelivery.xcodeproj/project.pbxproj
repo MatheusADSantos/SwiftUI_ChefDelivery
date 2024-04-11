@@ -23,6 +23,7 @@
 		74761B102BC71A50007958A0 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761B0F2BC71A50007958A0 /* StoreType.swift */; };
 		74761B122BC71B5F007958A0 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761B112BC71B5E007958A0 /* ProductType.swift */; };
 		74761B142BC71C1E007958A0 /* StoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761B132BC71C1E007958A0 /* StoreDetailView.swift */; };
+		74ABF8C32BC8210800FF199A /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABF8C22BC8210800FF199A /* Double+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		74761B0F2BC71A50007958A0 /* StoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
 		74761B112BC71B5E007958A0 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		74761B132BC71C1E007958A0 /* StoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailView.swift; sourceTree = "<group>"; };
+		74ABF8C22BC8210800FF199A /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		74761AE72BC43ECF007958A0 /* ChefDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				74ABF8C12BC820F700FF199A /* Extension */,
 				74761AF72BC56B1F007958A0 /* App */,
 				74761AFE2BC58F19007958A0 /* Model */,
 				74761AF82BC56B2E007958A0 /* NavigationBar */,
@@ -153,6 +156,14 @@
 			path = StoreView;
 			sourceTree = "<group>";
 		};
+		74ABF8C12BC820F700FF199A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				74ABF8C22BC8210800FF199A /* Double+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +238,7 @@
 				74761B0E2BC64329007958A0 /* StoresContainerView.swift in Sources */,
 				74761B072BC5CDDB007958A0 /* CarouselItemView.swift in Sources */,
 				74761B042BC5905F007958A0 /* OrderType.swift in Sources */,
+				74ABF8C32BC8210800FF199A /* Double+.swift in Sources */,
 				74761AFD2BC581CA007958A0 /* OrderTypeGridView.swift in Sources */,
 				74761B102BC71A50007958A0 /* StoreType.swift in Sources */,
 				74761B022BC58FCD007958A0 /* DataSourceMock.swift in Sources */,

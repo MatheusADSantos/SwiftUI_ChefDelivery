@@ -38,7 +38,7 @@ struct StoreDetailView: View {
                             Text(product.name).bold()
                             Text(product.description)
                                 .foregroundColor(.black.opacity(0.5))
-                            Text(String(product.price))
+                            Text(product.formatePrice)
                         }
                         Spacer()
                         Image(product.image)
