@@ -25,13 +25,15 @@ struct ProductDetailView: View {
                     .font(.title)
                     .bold()
                     .padding(.horizontal)
+                    .padding(.top)
                 Text(product.description)
                     .padding(.horizontal)
+                    .frame(alignment: .leading)
                 Text(product.formatePrice)
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-            }
+            }.foregroundColor(.black)
             
             Spacer()
             
@@ -39,6 +41,7 @@ struct ProductDetailView: View {
                 Text("Quantidade")
                     .font(.title3)
                     .bold()
+                    .foregroundColor(.black)
                 HStack {
                     Button(action: {
                         if productQuantity > 1 {
@@ -47,7 +50,10 @@ struct ProductDetailView: View {
                     }, label: {
                         Image(systemName: "minus.circle.fill").font(.title).bold()
                     })
-                    Text("\(productQuantity)").font(.title2).bold()
+                    Text("\(productQuantity)")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.black)
                     Button(action: {
                         productQuantity += 1
                     }, label: {
