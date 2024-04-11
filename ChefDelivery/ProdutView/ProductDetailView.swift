@@ -31,6 +31,24 @@ struct ProductDetailView: View {
                     .bold()
                     .padding(.horizontal)
             }
+            
+            Spacer()
+            
+            VStack(spacing: 16) {
+                Text("Quantidade")
+                    .font(.title3)
+                    .bold()
+                HStack {
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Image(systemName: "minus.circle.fill").font(.title).bold()
+                    })
+                    Text("4").font(.title2).bold()
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Image(systemName: "plus.circle.fill").font(.title).bold()
+                    })
+                }
+            }
+            
             Spacer()
             
             Button(action: {
