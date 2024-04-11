@@ -24,6 +24,7 @@
 		74761B122BC71B5F007958A0 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761B112BC71B5E007958A0 /* ProductType.swift */; };
 		74761B142BC71C1E007958A0 /* StoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74761B132BC71C1E007958A0 /* StoreDetailView.swift */; };
 		74ABF8C32BC8210800FF199A /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABF8C22BC8210800FF199A /* Double+.swift */; };
+		74ABF8C62BC82A4E00FF199A /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABF8C52BC82A4E00FF199A /* ProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		74761B112BC71B5E007958A0 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		74761B132BC71C1E007958A0 /* StoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailView.swift; sourceTree = "<group>"; };
 		74ABF8C22BC8210800FF199A /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		74ABF8C52BC82A4E00FF199A /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				74761AFB2BC581A9007958A0 /* GridView */,
 				74761B052BC5CD8A007958A0 /* CarouselView */,
 				74761B0A2BC5DB36007958A0 /* StoreView */,
+				74ABF8C42BC82A3400FF199A /* ProdutView */,
 				74761AEC2BC43ED2007958A0 /* Assets.xcassets */,
 				74761AEE2BC43ED2007958A0 /* ChefDelivery.entitlements */,
 				74761AEF2BC43ED2007958A0 /* Preview Content */,
@@ -164,6 +167,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		74ABF8C42BC82A3400FF199A /* ProdutView */ = {
+			isa = PBXGroup;
+			children = (
+				74ABF8C52BC82A4E00FF199A /* ProductDetailView.swift */,
+			);
+			path = ProdutView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74761AEB2BC43ECF007958A0 /* ContentView.swift in Sources */,
+				74ABF8C62BC82A4E00FF199A /* ProductDetailView.swift in Sources */,
 				74761B0E2BC64329007958A0 /* StoresContainerView.swift in Sources */,
 				74761B072BC5CDDB007958A0 /* CarouselItemView.swift in Sources */,
 				74761B042BC5905F007958A0 /* OrderType.swift in Sources */,
