@@ -25,6 +25,15 @@ struct StoresContainerView: View {
                 Text(title).font(.headline)
                 Spacer()
                 Menu("Filtrar") {
+                    
+                    Button(action: {
+                        ratingFilter = 0
+                    }, label: {
+                        Text("Limpar filtro!")
+                    })
+                    
+                    Divider()
+                    
                     ForEach(1...5, id: \.self) { rating in
                         Button(action: {
                             ratingFilter = rating
