@@ -9,7 +9,8 @@ import SwiftUI
 
 struct StoreDetailProductsView: View {
     
-    let products: [ProductType]
+//    let products: [ProductType]
+    @EnvironmentObject var store: StoreType
     @State private var productSelected: ProductType?
     
     var body: some View {
@@ -17,7 +18,7 @@ struct StoreDetailProductsView: View {
            Text("Produtos")
                .font(.title2).bold().padding()
            
-            ForEach(products) { product in
+           ForEach(store.products) { product in
                 NavigationLink { ProductDetailView(product: product) } label: {
                     Button {
                         productSelected = product
@@ -34,7 +35,8 @@ struct StoreDetailProductsView: View {
 
 struct StoreDetailProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        StoreDetailProductsView(products: storesMock[0].products)
+        StoreDetailProductsView()
+            .environmentObject(storesMock[0])
             .previewLayout(.sizeThatFits)
     }
 }
