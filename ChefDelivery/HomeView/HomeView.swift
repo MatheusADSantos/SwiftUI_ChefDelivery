@@ -32,6 +32,21 @@ struct HomeView: View {
                     .blur(radius: 60)
                     .opacity(isAnimating ? 0.5 : 0)
                 
+                Image("image")
+                    .resizable()
+                    .scaledToFit()
+                    .shadow(radius: 60)
+                    .padding(32)
+                    .gesture(
+                        DragGesture()
+                            .onChanged({ gesture in
+                                print(gesture.translation)
+                            })
+                            .onEnded({ _ in
+                                print("A interação acabou")
+                            })
+                    )
+                
                 VStack {
                     Text("Chef Delivey")
                         .font(.system(size: 40))
