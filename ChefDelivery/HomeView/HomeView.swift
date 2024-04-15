@@ -37,15 +37,20 @@ struct HomeView: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 60)
-                    .padding(32)
+                    .padding(isAnimating ? 32 : 94)
+                    .opacity(isAnimating ? 1 : 0)
                     .offset(x: imageOffset.width, y: imageOffset.height)
                     .gesture(
                         DragGesture()
                             .onChanged({ gesture in
-                                imageOffset = gesture.translation
+                                withAnimation(.easeInOut(duration: 0.5)){
+                                    imageOffset = gesture.translation
+                                }
                             })
                             .onEnded({ _ in
-                                imageOffset = .zero
+                                withAnimation(.easeInOut(duration: 0.5)){
+                                    imageOffset = .zero
+                                }
                             })
                     )
                 
