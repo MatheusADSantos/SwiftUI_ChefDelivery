@@ -9,13 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var isAnimating = false
-    @State var imageOffset : CGSize = .zero
+    @State private var isAnimating = false
+    @State private var imageOffset: CGSize = .zero
+    @State private var buttonOffset: CGFloat = .zero
+    @State private var showSecondScreen = false
+    let buttonHeight: CGFloat = 80
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                
                 Circle()
                     .foregroundColor(Color("ColorRed"))
                     .frame(width: isAnimating ? 200 : 0)
@@ -33,36 +35,15 @@ struct HomeView: View {
                     .blur(radius: 60)
                     .opacity(isAnimating ? 0.5 : 0)
                 
-                Image("image")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 60)
-                    .padding(isAnimating ? 32 : 94)
-                    .opacity(isAnimating ? 1 : 0)
-                    .offset(x: imageOffset.width, y: imageOffset.height)
-                    .gesture(
-                        DragGesture()
-                            .onChanged({ gesture in
-                                withAnimation(.easeInOut(duration: 0.5)){
-                                    imageOffset = gesture.translation
-                                }
-                            })
-                            .onEnded({ _ in
-                                withAnimation(.easeInOut(duration: 0.5)){
-                                    imageOffset = .zero
-                                }
-                            })
-                    )
-                
                 VStack {
-                    Text("Chef Delivey")
-                        .font(.system(size: 40))
+                    Text("Chef Delivery")
+                        .font(.system(size: 48))
                         .fontWeight(.heavy)
                         .foregroundColor(Color("ColorRed"))
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
                     
-                    Text("Peça suas comidas no conforto de sua casa.")
+                    Text("Peça as suas comidas favoritas no conforto da sua casa.")
                         .font(.title2)
                         .padding()
                         .multilineTextAlignment(.center)
@@ -70,21 +51,103 @@ struct HomeView: View {
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
                     
-                    Spacer()
-                }
-                
-                
-                .onAppear {
-                    withAnimation(.easeInOut(duration: 1.5)) {
-                        isAnimating = true
+                    Image("image")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(32)
+                        .shadow(radius: 30)
+                        .offset(x: imageOffset.width, y: imageOffset.height)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ gesture in
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        imageOffset = gesture.translation
+                                    }
+                                })
+                                .onEnded({ _ in
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        imageOffset = .zero
+                                    }
+                                })
+                        )
+                    
+                    ZStack {
+                        Capsule()
+                            .fill(Color("ColorRed").opacity(0.2))
+                        
+                        Capsule()
+                            .fill(Color("ColorRed").opacity(0.2))
+                            .padding(8)
+                        
+                        Text("Descubra mais")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(Color("ColorRedDark"))
+                            .offset(x: 20)
+                        
+                        HStack {
+                            Capsule()
+                                .fill(Color("ColorRed"))
+                                .frame(width: buttonOffset + buttonHeight)
+                            
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .fill(Color("ColorRed"))
+                                
+                                Circle()
+                                    .fill(Color("ColorRedDark"))
+                                    .padding(8)
+                                
+                                Image(systemName: "chevron.right.2")
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            Spacer()
+                        }
+                        .offset(x: buttonOffset)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ gesture in
+                                    if gesture.translation.width > 0 && buttonOffset <= (geometry.size.width - 60) - buttonHeight {
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            buttonOffset = gesture.translation.width
+                                        }
+                                    }
+                                })
+                                .onEnded({ _ in
+                                    if buttonOffset > (geometry.size.width - 60) / 2 {
+                                        showSecondScreen = true
+                                    } else {
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            buttonOffset = 0
+                                        }
+                                    }
+                                })
+                        )
                     }
+                    .frame(width: geometry.size.width - 60, height: buttonHeight)
+                    .opacity(isAnimating ? 1 : 0)
+                    .offset(y: isAnimating ? 0 : 100)
                 }
             }
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.5)) {
+                isAnimating = true
+            }
+        }
+        .fullScreenCover(isPresented: $showSecondScreen) {
+            ContentView()
         }
     }
 }
 
-struct HomeView_Preview : PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
