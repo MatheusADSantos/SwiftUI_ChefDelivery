@@ -30,6 +30,9 @@ struct StoreDetailProductsView: View {
                 }
             }
         }
+       .onAppear() {
+           fetchData()
+       }
     }
 }
 
@@ -40,3 +43,18 @@ struct StoreDetailProductsView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
+
+// MARK: - Methods
+
+func fetchData() {
+    guard let url = URL(string: "https://polls.apiblueprint.org/questions") else { return }
+    URLSession.shared.dataTask(with: url) { data, _, error in
+        if let error = error {
+            print(error.localizedDescription)
+        }
+        else if let data = data {
+            print(data)
+        }
+    }.resume()
+}
+
