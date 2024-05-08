@@ -47,13 +47,18 @@ struct StoreDetailProductsView_Previews: PreviewProvider {
 // MARK: - Methods
 
 func fetchData() {
-    guard let url = URL(string: "https://polls.apiblueprint.org/questions") else { return }
+    guard let url = URL(string: "https://private-289ca1-matheus18.apiary-mock.com/home") else { return }
     URLSession.shared.dataTask(with: url) { data, _, error in
         if let error = error {
             print(error.localizedDescription)
         }
         else if let data = data {
-            print(data)
+            do {
+                let json = try JSONSerialization.jsonObject(with: data)
+                print(json)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }.resume()
 }
